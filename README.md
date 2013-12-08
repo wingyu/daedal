@@ -8,6 +8,11 @@ to aid in the construction of complex queries. Type checking and attribute
 coercion are handled using [Virtus](https://github.com/solnic/virtus) to make
 it harder to construct invalid ElasticSearch queries before sending them to the server.
 
+The ElasticSearch Query DSL is huge! There are also a ton of different options within each
+component. My goal is to include as much of that functionality and flexibility as possible, but
+also maintain as high of test coverage as possible. That means it'll take some time for this project
+to reach full coverage of the Query DSL, so please feel free to contribute or be patient :)
+
 Installation
 ------------
 
@@ -54,6 +59,15 @@ ElasticSearch clients out there:
 match_query.to_json # => "{\"match\":{\"foo\":{\"query\":\"bar\"}}}"
 ```
 
+To date (12/8/2013), I have implemented the following queries:
+* [bool query](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html)
+* [constant score query](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-constant-score-query.html)
+* [dis max query](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-dis-max-query.html)
+* [filtered query](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-filtered-query.html)
+* [match all query](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-match-all-query.html)
+* [match query](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-match-query.html)
+* [multi match query](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html)
+
 ### Filters
 
 Filters are contained within the `Filters` module. You can construct filter components
@@ -66,6 +80,9 @@ term_filter = Daedal::Filters::TermFilter.new(field: 'foo', term: 'bar')
 
 term_filter.to_json # => "{\"term\":{\"foo\":\"bar\"}}"
 ```
+
+To date (12/8/2013), I have implemented the following filters:
+* [term filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-term-filter.html)
 
 ### Type checking and attribute coercion
 
