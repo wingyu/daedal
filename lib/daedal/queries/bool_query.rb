@@ -17,10 +17,11 @@ module Daedal
       # non required attributes
       attribute :minimum_should_match, Integer, required: false
       attribute :boost, Integer, required: false
+      attribute :name, Symbol, required: false
   
       def to_hash
         result = {bool: {should: should.map {|q| q.to_hash}, must: must.map {|q| q.to_hash}, must_not: must_not.map {|q| q.to_hash}}}
-        options = {minimum_should_match: minimum_should_match, boost: boost}
+        options = {minimum_should_match: minimum_should_match, boost: boost, _name: name}
         result[:bool].merge!(options.select { |k,v| !v.nil? })
   
         result

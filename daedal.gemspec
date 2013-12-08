@@ -11,4 +11,6 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.homepage    =
     'https://github.com/cschuch/daedal'
+
+  s.add_dependency('virtus', '~> 1.0.0')
 end

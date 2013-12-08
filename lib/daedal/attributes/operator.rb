@@ -7,7 +7,7 @@ module Daedal
         unless value.nil?
           value = value.to_sym
           unless ALLOWED_MATCH_OPERATORS.include? value
-            raise "#{value} is not a valid operator. Allowed values are #{ALLOWED_MATCH_OPERATORS}."
+            raise Virtus::CoercionError.new(value, 'Daedal::Attributes::Operator')
           end
         end
         value

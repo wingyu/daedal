@@ -41,6 +41,18 @@ describe Daedal::Queries::FilteredQuery do
     end
   end
 
+  context 'with an invalid query specified' do
+    it 'will raise an error' do
+      expect{subject.new(query: :foo)}.to raise_error
+    end
+  end
+
+  context 'with an invalid filter specified' do
+    it 'will raise an error' do
+      expect{subject.new(filter: :foo)}.to raise_error
+    end
+  end
+
   context 'with a query and a filter specified' do
     let(:query) do
       subject.new(query: match_query, filter: term_filter)
