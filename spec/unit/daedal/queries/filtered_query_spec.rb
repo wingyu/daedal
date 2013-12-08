@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'daedal/queries'
+require 'daedal/filters'
 
 describe Daedal::Queries::FilteredQuery do
 

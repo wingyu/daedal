@@ -1,4 +1,5 @@
 require 'daedal/queries/base_query'
+require 'daedal/filters/base_filter'
 require 'daedal/attributes'
 
 module Daedal
@@ -10,11 +11,8 @@ module Daedal
       attribute :boost, Float
 
       # non required attributes, but one must be required of the two
-
-      # TODO: Figure out how to use Virtus Attributes correctly,
-      # I shouldn't have to ahve this 'orNil' version hanging around
-      attribute :query, Attributes::QueryOrNil
-      attribute :filter, Attributes::FilterOrNil
+      attribute :query, Daedal::Queries::BaseQuery, required: false
+      attribute :filter, Daedal::Filters::BaseFilter, required: false
 
       # you must require *one of* query or filter in order for this to be valid
       def initialize(options={})

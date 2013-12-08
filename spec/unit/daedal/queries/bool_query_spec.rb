@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'daedal/queries'
+require 'debugger'
 
 describe Daedal::Queries::BoolQuery do
 
@@ -136,9 +137,9 @@ describe Daedal::Queries::BoolQuery do
       match_query.new(field: :a, query: :b)
     end
 
-    context 'with the #add_should_query method' do
+    context 'with the should.<< method' do
       before do
-        query.add_should_query mq
+        query.should << mq
       end
       it 'will add a should query' do
         expect(query.should).to eq [mq]
@@ -146,7 +147,7 @@ describe Daedal::Queries::BoolQuery do
 
       context 'twice' do
         before do
-          query.add_should_query mq
+          query.should << mq
         end
         it 'will append the second query' do
           expect(query.should).to eq [mq, mq]
@@ -155,14 +156,14 @@ describe Daedal::Queries::BoolQuery do
 
       context 'with a non-valid query' do
         it 'will raise an error' do
-          expect{query.add_should_query :foo}.to raise_error
+          expect{query.should << :foo}.to raise_error
         end
       end
     end
 
-    context 'with the #add_must_query method' do
+    context 'with the must.<< method' do
       before do
-        query.add_must_query mq
+        query.must << mq
       end
 
       it 'will add a should query' do
@@ -171,7 +172,7 @@ describe Daedal::Queries::BoolQuery do
 
       context 'twice' do
         before do
-          query.add_must_query mq
+          query.must << mq
         end
         it 'will append the second query' do
           expect(query.must).to eq [mq, mq]
@@ -180,15 +181,15 @@ describe Daedal::Queries::BoolQuery do
 
       context 'with a non-valid query' do
         it 'will raise an error' do
-          expect {query.add_must_query :foo}.to raise_error
+          expect {query.must << :foo}.to raise_error
         end
       end
 
     end
 
-    context 'with the #add_must_not_query method' do
+    context 'with the must_not.<< method' do
       before do
-        query.add_must_not_query mq
+        query.must_not << mq
       end
 
       it 'will add a must_not query' do
@@ -197,7 +198,7 @@ describe Daedal::Queries::BoolQuery do
 
       context 'twice' do
         before do
-          query.add_must_not_query mq
+          query.must_not << mq
         end
         it 'will append the second query' do
           expect(query.must_not).to eq [mq, mq]
@@ -206,7 +207,7 @@ describe Daedal::Queries::BoolQuery do
 
       context 'with a non-valid query' do
         it 'will raise an error' do
-          expect {query.add_must_not_query :foo}.to raise_error
+          expect {query.must_not << :foo}.to raise_error
         end
       end
     end

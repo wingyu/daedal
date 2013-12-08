@@ -1,19 +1,16 @@
 module Daedal
   module Attributes
-    """Custom coercer for an array of queries"""
-    class QueryArray < Virtus::Attribute
-      def coerce(value)
-        unless value.is_a? Array
-          value = [value]
-        end
+    """Custom attribute for an array of queries"""
+    class QueryArray < Array
 
-        value.each do |q|
-          unless q.is_a? Daedal::Queries::BaseQuery
-            raise "Must give an array of queries"
-          end
+      # override the << method so that you throw
+      # an error if you don't try to append a query
+      def <<(q)
+        if q.is_a? Daedal::Queries::BaseQuery
+          super q
+        else
+          raise "Must give a query"""
         end
-
-        value
       end
     end
   end

@@ -9,8 +9,8 @@ module Daedal
     class FilteredQuery < BaseQuery
   
       # required attributes
-      attribute :query, Attributes::Query, default: Daedal::Queries::MatchAllQuery.new
-      attribute :filter, Attributes::Filter, default: Daedal::Filters::BaseFilter.new
+      attribute :query, Daedal::Queries::BaseQuery, default: Daedal::Queries::MatchAllQuery.new
+      attribute :filter, Daedal::Filters::BaseFilter, default: Daedal::Filters::BaseFilter.new
   
       def to_hash
         {filtered: {query: query.to_hash, filter: filter.to_hash}}

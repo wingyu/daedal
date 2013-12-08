@@ -36,6 +36,18 @@ describe Daedal::Queries::ConstantScoreQuery do
     end
   end
 
+  context 'with a boost but an invalid query specified' do
+    it 'will raise an error' do
+      expect {subject.new(boost: 5, query: :foo)}.to raise_error
+    end
+  end
+
+  context 'with a boost but an invalid filter specified' do
+    it 'will raise an error' do
+      expect {subject.new(boost: 5, filter: :foo)}.to raise_error
+    end
+  end
+
   context 'with a query and a boost specified' do
     let(:query) do
       subject.new(query: match_query, boost: 5)

@@ -8,23 +8,11 @@ module Daedal
     class DisMaxQuery < BaseQuery
   
       # required attributes
-      attribute :queries, Attributes::QueryArray, default: Array.new
+      attribute :queries, Attributes::QueryArray[Daedal::Queries::BaseQuery], default: Array.new
   
       # non required attributes
       attribute :tie_breaker, Float, required: false
       attribute :boost, Integer, required: false
-  
-      def verify_query(q)
-        unless q.is_a? Daedal::Queries::BaseQuery
-          raise "Must give a valid query"
-        end
-      end
-  
-      # TODO: See note in bool_query.rb about this
-      def add_query(q)
-        verify_query(q)
-        queries << q
-      end
   
       def to_hash
         result = {dis_max: {queries: queries.map {|q| q.to_hash }}}

@@ -124,9 +124,9 @@ describe Daedal::Queries::DisMaxQuery do
       match_query.new(field: :a, query: :b)
     end
 
-    context 'with the #add_query method' do
+    context 'with the queries.<< method' do
       before do
-        query.add_query mq
+        query.queries << mq
       end
       it 'will add a query' do
         expect(query.queries).to eq [mq]
@@ -134,7 +134,7 @@ describe Daedal::Queries::DisMaxQuery do
 
       context 'twice' do
         before do
-          query.add_query mq
+          query.queries << mq
         end
         it 'will append the second query' do
           expect(query.queries).to eq [mq, mq]
@@ -143,7 +143,7 @@ describe Daedal::Queries::DisMaxQuery do
 
       context 'with a non-valid query' do
         it 'will raise an error' do
-          expect{query.add_query :foo}.to raise_error
+          expect{query.queries << :foo}.to raise_error
         end
       end
     end
