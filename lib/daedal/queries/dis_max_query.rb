@@ -4,7 +4,7 @@ require 'daedal/attributes'
 module Daedal
   module Queries
 
-    """Class for the basic match query"""
+    """Class for the dis max query"""
     class DisMaxQuery < BaseQuery
   
       # required attributes
@@ -20,6 +20,7 @@ module Daedal
         end
       end
   
+      # TODO: See note in bool_query.rb about this
       def add_query(q)
         verify_query(q)
         queries << q

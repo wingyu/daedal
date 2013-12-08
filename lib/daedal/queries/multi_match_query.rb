@@ -4,7 +4,7 @@ require 'daedal/attributes'
 module Daedal
   module Queries
 
-    """Class for the multi_match query"""
+    """Class for the multi match query"""
     class MultiMatchQuery < BaseQuery
   
       # required attributes
@@ -22,6 +22,7 @@ module Daedal
       attribute :boost, Integer, required: false
       attribute :fuzziness, Float, required: false
   
+      # Fields cannot be an empty array... should eventually refactor this kind of thing out of initialize
       def initialize(options={})
         super options
   

@@ -5,7 +5,7 @@ require 'daedal/attributes'
 
 module Daedal
   module Queries
-    """Class for the basic match query"""
+    """Class for the filtered query"""
     class FilteredQuery < BaseQuery
   
       # required attributes
