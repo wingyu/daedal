@@ -12,3 +12,10 @@
 /log/*.log
 /tmp
 *.swp
+
+# Ignore coverage stuff
+/coverage
+/.coveralls.yml
+
+# Ignore gem builds
+*.gem

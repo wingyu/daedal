@@ -1,4 +1,8 @@
-require 'require_all'
+require 'simplecov'
+SimpleCov.start
+require 'coveralls'
+Coveralls.wear!
+
 require 'json'
 
 def append_load_path(*paths)
