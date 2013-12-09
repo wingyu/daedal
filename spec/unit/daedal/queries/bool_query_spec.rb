@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'daedal/queries'
-require 'debugger'
 
 describe Daedal::Queries::BoolQuery do
 
