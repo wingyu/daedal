@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'rspec'
-gem 'simplecov', :require => false, :group => :test
-gem 'coveralls', :require => false
-gem 'guard'
-gem 'guard-rspec'
-gem 'require_all'
-gem 'fuubar'
-gem 'virtus', '>= 1.0.0'
+gemspec
+
+group :development, :test do
+  gem 'rspec'
+  gem 'simplecov'
+  gem 'coveralls'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'fuubar'
+end
