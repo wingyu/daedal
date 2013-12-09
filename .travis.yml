@@ -1,0 +1,6 @@
+language: ruby
+rvm:
+    - 2.0.0
+notifications:
+    email:
+        - cas13091@gmail.com
