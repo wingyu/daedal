@@ -12,12 +12,12 @@ module Daedal
   
       # non required attributes
       attribute :score_mode, Attributes::ScoreMode, required: false
+      attribute :name, Symbol, required: false
   
       def to_hash
         result = {nested: {path: path, query: query.to_hash}}
-        unless score_mode.nil?
-          result[:nested][:score_mode] = score_mode
-        end
+        options = {score_mode: score_mode, _name: name}
+        result[:nested].merge!(options.select { |k,v| !v.nil? })
 
         result
       end

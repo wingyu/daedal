@@ -116,6 +116,22 @@ describe Daedal::Queries::DisMaxQuery do
     end
   end
 
+  context 'with name specified' do
+    let(:query) do
+      subject.new(name: :foo)
+    end
+    before do
+      hash_query[:dis_max][:_name] = :foo
+    end
+    it 'will set name properly' do
+      expect(query.name).to eq :foo
+    end
+    it 'will have the correct hash and json representations' do
+      expect(query.to_hash).to eq hash_query
+      expect(query.to_json).to eq hash_query.to_json
+    end
+  end
+
   context 'when adding more queries' do
     let(:query) do
       subject.new

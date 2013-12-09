@@ -215,6 +215,34 @@ describe Daedal::Queries::MatchQuery do
     end
   end
 
+  context 'with a slop of 2 specified' do
+    let(:match_query) do
+      subject.new(field: :foo, query: :bar, slop: 2)
+    end
+
+    before do
+      base_query[:match][:foo][:slop] = 2
+    end
+
+    it 'will set the phrase type to :phrase' do
+      expect(match_query.slop).to eq 2
+    end
+
+    it 'will have the correct hash representation' do
+      expect(match_query.to_hash).to eq base_query
+    end
+
+    it 'will have the correct json representation' do
+      expect(match_query.to_json).to eq base_query.to_json
+    end
+  end
+
+  context 'with a non integer slop specified' do
+    it 'will raise an error' do
+      expect {subject.new(field: :foo, query: :bar, slop: 'foo')}.to raise_error
+    end
+  end
+
   context 'with a fuzziness of 0.5 specified' do
     let(:match_query) do
       subject.new(field: :foo, query: :bar, fuzziness: 0.5)

@@ -115,6 +115,44 @@ describe Daedal::Queries::BoolQuery do
     end
   end
 
+  context 'with disable_coord specified' do
+    let(:query) do
+      subject.new(disable_coord: false)
+    end
+    before do
+      hash_query[:bool][:disable_coord] = false
+    end
+    it 'will set disable_coord properly' do
+      expect(query.disable_coord).to eq false
+    end
+    it 'will have the correct hash and json representations' do
+      expect(query.to_hash).to eq hash_query
+      expect(query.to_json).to eq hash_query.to_json
+    end
+  end
+
+  context 'with name specified' do
+    let(:query) do
+      subject.new(name: :foo)
+    end
+    before do
+      hash_query[:bool][:_name] = :foo
+    end
+    it 'will set name properly' do
+      expect(query.name).to eq :foo
+    end
+    it 'will have the correct hash and json representations' do
+      expect(query.to_hash).to eq hash_query
+      expect(query.to_json).to eq hash_query.to_json
+    end
+  end
+
+  context 'with a non boolean name specified' do
+    it 'will raise an error' do
+      expect{subject.new(name: [])}.to raise_error
+    end
+  end
+
   context 'with a query (not in an array) specified' do
     let(:mq) do
       match_query.new(field: :a, query: :b)

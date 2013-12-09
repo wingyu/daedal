@@ -19,11 +19,12 @@ module Daedal
       attribute :analyzer, Symbol, required: false
       attribute :boost, Integer, required: false
       attribute :fuzziness, Float, required: false
+      attribute :slop, Integer, required: false
   
       def to_hash
   
         result = {match: {field => {query: query}}}
-        options = {minimum_should_match: minimum_should_match, cutoff_frequency: cutoff_frequency, type: type, analyzer: analyzer, boost: boost, fuzziness: fuzziness, operator: operator}
+        options = {minimum_should_match: minimum_should_match, cutoff_frequency: cutoff_frequency, type: type, analyzer: analyzer, boost: boost, fuzziness: fuzziness, operator: operator, slop: slop}
         result[:match][field].merge! options.select {|k,v| !v.nil?}
   
         result
