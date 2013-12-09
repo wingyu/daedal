@@ -2,6 +2,7 @@ Daedal
 ======
 [![Build Status](https://travis-ci.org/cschuch/daedal.png?branch=master)](https://travis-ci.org/cschuch/daedal)
 [![Coverage Status](https://coveralls.io/repos/cschuch/daedal/badge.png)](https://coveralls.io/r/cschuch/daedal)
+[![Gem Version](https://badge.fury.io/rb/daedal.png)](http://badge.fury.io/rb/daedal)
 
 This repository contains a set of Ruby classes designed to make ElasticSearch
 query creation simpler and easier to debug. The goal is to reproduce all
