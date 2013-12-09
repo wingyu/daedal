@@ -98,7 +98,7 @@ describe Daedal::Queries::DisMaxQuery do
 
   context 'with an initial array of non queries specified' do
     it 'will raise an error' do
-      expect {subject.new(queries: [:foo])}.to raise_error
+      expect {subject.new(queries: [:foo])}.to raise_error(Virtus::CoercionError)
     end
   end
 
@@ -159,7 +159,7 @@ describe Daedal::Queries::DisMaxQuery do
 
       context 'with a non-valid query' do
         it 'will raise an error' do
-          expect{query.queries << :foo}.to raise_error
+          expect{query.queries << :foo}.to raise_error(Virtus::CoercionError)
         end
       end
     end

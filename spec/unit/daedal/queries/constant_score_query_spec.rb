@@ -32,19 +32,19 @@ describe Daedal::Queries::ConstantScoreQuery do
 
   context 'without a boost specified' do
     it 'will raise an error' do
-      expect{subject.new(query: match_query)}.to raise_error
+      expect{subject.new(query: match_query)}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'with a boost but an invalid query specified' do
     it 'will raise an error' do
-      expect {subject.new(boost: 5, query: :foo)}.to raise_error
+      expect {subject.new(boost: 5, query: :foo)}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'with a boost but an invalid filter specified' do
     it 'will raise an error' do
-      expect {subject.new(boost: 5, filter: :foo)}.to raise_error
+      expect {subject.new(boost: 5, filter: :foo)}.to raise_error(Virtus::CoercionError)
     end
   end
 

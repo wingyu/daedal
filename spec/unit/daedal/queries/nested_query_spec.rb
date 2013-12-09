@@ -14,19 +14,19 @@ describe Daedal::Queries::NestedQuery do
 
   context 'with no path specified' do
     it 'will raise an error' do
-      expect{subject.new(query: match_all_query)}.to raise_error
+      expect{subject.new(query: match_all_query)}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'with no query specified' do
     it 'will raise an error' do
-      expect{subject.new(path: 'foo')}.to raise_error
+      expect{subject.new(path: 'foo')}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'with an invalid query specified' do
     it 'will raise an error' do
-      expect{subject.new(query: :foo)}.to raise_error
+      expect{subject.new(query: :foo)}.to raise_error(Virtus::CoercionError)
     end
   end
 
@@ -76,7 +76,7 @@ describe Daedal::Queries::NestedQuery do
 
   context 'with an invalid score_mode specified' do
     it 'will raise an error' do
-      expect{subject.new(query: match_all_query, path: :foo, score_mode: 'foo')}.to raise_error
+      expect{subject.new(query: match_all_query, path: :foo, score_mode: 'foo')}.to raise_error(Virtus::CoercionError)
     end
   end
 end

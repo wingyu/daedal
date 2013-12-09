@@ -11,8 +11,8 @@ module Daedal
       attribute :boost, Float
 
       # non required attributes, but one must be required of the two
-      attribute :query, Daedal::Queries::BaseQuery, required: false
-      attribute :filter, Daedal::Filters::BaseFilter, required: false
+      attribute :query, Attributes::Query, required: false
+      attribute :filter, Attributes::Filter, required: false
 
       # you must require *one of* query or filter in order for this to be valid
       def initialize(options={})

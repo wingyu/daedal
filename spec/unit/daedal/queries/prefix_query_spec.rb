@@ -9,19 +9,19 @@ describe Daedal::Queries::PrefixQuery do
 
   context 'with no field or term specified' do
     it 'will raise an error' do
-      expect {subject.new}.to raise_error
+      expect {subject.new}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'with no field specified' do
     it 'will raise an error' do
-      expect {subject.new(query: :foo)}.to raise_error
+      expect {subject.new(query: :foo)}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'with no term specified' do
     it 'will raise an error' do
-      expect {subject.new(field: :foo)}.to raise_error
+      expect {subject.new(field: :foo)}.to raise_error(Virtus::CoercionError)
     end
   end
 

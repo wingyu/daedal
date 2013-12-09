@@ -13,13 +13,13 @@ describe Daedal::Queries::MatchQuery do
 
   context 'without a field or term given' do
     it 'will raise an error' do
-      expect {subject.new}.to raise_error
+      expect {subject.new}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'without a term given' do
     it 'will raise an error' do
-      expect {subject.new(field: :foo)}.to raise_error
+      expect {subject.new(field: :foo)}.to raise_error(Virtus::CoercionError)
     end
   end
 
@@ -77,7 +77,7 @@ describe Daedal::Queries::MatchQuery do
 
   context 'with a non-valid operator specified' do
     it 'will raise an error' do
-      expect {subject.new(field: :foo, query: :bar, operator: :foo)}.to raise_error
+      expect {subject.new(field: :foo, query: :bar, operator: :foo)}.to raise_error(Virtus::CoercionError)
     end
   end
 
@@ -105,7 +105,7 @@ describe Daedal::Queries::MatchQuery do
 
   context 'with a non-valid type specified' do
     it 'will raise an error' do
-      expect {subject.new(field: :foo, query: :bar, type: :foo)}.to raise_error
+      expect {subject.new(field: :foo, query: :bar, type: :foo)}.to raise_error(Virtus::CoercionError)
     end
   end
 
@@ -133,7 +133,7 @@ describe Daedal::Queries::MatchQuery do
 
   context 'with a non-integer minimum should match specified' do
     it 'will raise an error' do
-      expect {subject.new(field: :foo, query: :bar, minimum_should_match: 'foo')}.to raise_error
+      expect {subject.new(field: :foo, query: :bar, minimum_should_match: 'foo')}.to raise_error(Virtus::CoercionError)
     end
   end
 
@@ -161,7 +161,7 @@ describe Daedal::Queries::MatchQuery do
 
   context 'with a non-float cutoff frequency specified' do
     it 'will raise an error' do
-      expect {subject.new(field: :foo, query: :bar, cutoff_frequency: 'foo')}.to raise_error
+      expect {subject.new(field: :foo, query: :bar, cutoff_frequency: 'foo')}.to raise_error(Virtus::CoercionError)
     end
   end
 
@@ -211,7 +211,7 @@ describe Daedal::Queries::MatchQuery do
 
   context 'with a non integer boost specified' do
     it 'will raise an error' do
-      expect {subject.new(field: :foo, query: :bar, boost: 'foo')}.to raise_error
+      expect {subject.new(field: :foo, query: :bar, boost: 'foo')}.to raise_error(Virtus::CoercionError)
     end
   end
 
@@ -239,7 +239,7 @@ describe Daedal::Queries::MatchQuery do
 
   context 'with a non integer slop specified' do
     it 'will raise an error' do
-      expect {subject.new(field: :foo, query: :bar, slop: 'foo')}.to raise_error
+      expect {subject.new(field: :foo, query: :bar, slop: 'foo')}.to raise_error(Virtus::CoercionError)
     end
   end
 
@@ -267,7 +267,7 @@ describe Daedal::Queries::MatchQuery do
 
   context 'with a non float or integer fuzziness specified' do
     it 'will raise an error' do
-      expect {subject.new(field: :foo, query: :bar, fuzziness: 'foo')}.to raise_error
+      expect {subject.new(field: :foo, query: :bar, fuzziness: 'foo')}.to raise_error(Virtus::CoercionError)
     end
   end
 end

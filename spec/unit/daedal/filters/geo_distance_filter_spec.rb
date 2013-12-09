@@ -9,25 +9,25 @@ describe Daedal::Filters::GeoDistanceFilter do
 
   context 'without a field specified' do
     it 'will raise an error' do
-      expect{subject.new(distance: 5, lat: 10, lon: 30)}.to raise_error
+      expect{subject.new(distance: 5, lat: 10, lon: 30)}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'without a distance specified' do
     it 'will raise an error' do
-      expect{subject.new(field: :foo, lat: 10, lon: 30)}.to raise_error
+      expect{subject.new(field: :foo, lat: 10, lon: 30)}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'without a lat specified' do
     it 'will raise an error' do
-      expect{subject.new(field: :foo, distance: 10, lon: 30)}.to raise_error
+      expect{subject.new(field: :foo, distance: 10, lon: 30)}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'without a lon specified' do
     it 'will raise an error' do
-      expect{subject.new(field: :foo, lat: 10, distance: 30)}.to raise_error
+      expect{subject.new(field: :foo, lat: 10, distance: 30)}.to raise_error(Virtus::CoercionError)
     end
   end
 
@@ -80,25 +80,25 @@ describe Daedal::Filters::GeoDistanceFilter do
 
   context 'with an invalid unit specified' do
     it 'will raise an error' do
-      expect{subject.new(field: :foo, distance: 5, lat: 10, lon: 30, unit: 'foo')}.to raise_error
+      expect{subject.new(field: :foo, distance: 5, lat: 10, lon: 30, unit: 'foo')}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'with an invalid lat specified' do
     it 'will raise an error' do
-      expect{subject.new(field: :foo, distance: 5, lat: 'foo', lon: 30)}.to raise_error
+      expect{subject.new(field: :foo, distance: 5, lat: 'foo', lon: 30)}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'with an invalid lon specified' do
     it 'will raise an error' do
-      expect{subject.new(field: :foo, distance: 5, lat: 10, lon: 'foo')}.to raise_error
+      expect{subject.new(field: :foo, distance: 5, lat: 10, lon: 'foo')}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'with an invalid distance specified' do
     it 'will raise an error' do
-      expect{subject.new(field: :foo, distance: 'foo', lat: 10, lon: 30)}.to raise_error
+      expect{subject.new(field: :foo, distance: 'foo', lat: 10, lon: 30)}.to raise_error(Virtus::CoercionError)
     end
   end
 end

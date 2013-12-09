@@ -13,7 +13,7 @@ describe Daedal::Filters::RangeFilter do
 
   context 'without a field specified' do
     it 'will raise an error' do
-      expect{subject.new(gte: 1, lte: 2)}.to raise_error
+      expect{subject.new(gte: 1, lte: 2)}.to raise_error(Virtus::CoercionError)
     end
   end
 

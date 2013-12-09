@@ -8,7 +8,7 @@ module Daedal
   
       # required attributes
       attribute :path, Symbol
-      attribute :query, Daedal::Queries::BaseQuery
+      attribute :query, Attributes::Query
   
       # non required attributes
       attribute :score_mode, Attributes::ScoreMode, required: false

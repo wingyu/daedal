@@ -1,16 +1,14 @@
 module Daedal
   module Attributes
     """Custom attribute for an array of queries"""
-    class QueryArray < Array
-
+    class FilterArray < Array
       # override the << method so that you throw
       # an error if you don't try to append a query
-
-      def <<(q)
-        if q.is_a? Daedal::Queries::BaseQuery
-          super q
+      def <<(f)
+        if f.is_a? Daedal::Filters::BaseFilter
+          super f
         else
-          raise Virtus::CoercionError.new(q, 'Daedal::Queries::BaseQuery')
+          raise Virtus::CoercionError.new(f, 'Daedal::Filters::BaseFilter')
         end
       end
     end

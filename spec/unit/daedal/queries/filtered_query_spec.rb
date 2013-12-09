@@ -43,13 +43,13 @@ describe Daedal::Queries::FilteredQuery do
 
   context 'with an invalid query specified' do
     it 'will raise an error' do
-      expect{subject.new(query: :foo)}.to raise_error
+      expect{subject.new(query: :foo)}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'with an invalid filter specified' do
     it 'will raise an error' do
-      expect{subject.new(filter: :foo)}.to raise_error
+      expect{subject.new(filter: :foo)}.to raise_error(Virtus::CoercionError)
     end
   end
 

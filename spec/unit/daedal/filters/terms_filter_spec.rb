@@ -21,13 +21,13 @@ describe Daedal::Filters::TermsFilter do
 
   context 'without a field or a list of terms specified' do
     it 'will raise an error' do
-      expect {subject.new}.to raise_error
+      expect {subject.new}.to raise_error(Virtus::CoercionError)
     end
   end
 
   context 'without a field specified' do
     it 'will raise an error' do
-      expect {subject.new(terms: terms)}.to raise_error
+      expect {subject.new(terms: terms)}.to raise_error(Virtus::CoercionError)
     end
   end
 

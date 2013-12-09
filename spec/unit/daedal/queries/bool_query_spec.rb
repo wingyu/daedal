@@ -111,7 +111,7 @@ describe Daedal::Queries::BoolQuery do
 
   context 'with an initial array of non queries specified' do
     it 'will raise an error' do
-      expect {subject.new(should: [:foo])}.to raise_error
+      expect {subject.new(should: [:foo])}.to raise_error(Virtus::CoercionError)
     end
   end
 
@@ -149,7 +149,7 @@ describe Daedal::Queries::BoolQuery do
 
   context 'with a non boolean name specified' do
     it 'will raise an error' do
-      expect{subject.new(name: [])}.to raise_error
+      expect{subject.new(name: [])}.to raise_error(Virtus::CoercionError)
     end
   end
 
@@ -194,7 +194,7 @@ describe Daedal::Queries::BoolQuery do
 
       context 'with a non-valid query' do
         it 'will raise an error' do
-          expect{query.should << :foo}.to raise_error
+          expect{query.should << :foo}.to raise_error(Virtus::CoercionError)
         end
       end
     end
@@ -219,7 +219,7 @@ describe Daedal::Queries::BoolQuery do
 
       context 'with a non-valid query' do
         it 'will raise an error' do
-          expect {query.must << :foo}.to raise_error
+          expect {query.must << :foo}.to raise_error(Virtus::CoercionError)
         end
       end
 
@@ -245,7 +245,7 @@ describe Daedal::Queries::BoolQuery do
 
       context 'with a non-valid query' do
         it 'will raise an error' do
-          expect {query.must_not << :foo}.to raise_error
+          expect {query.must_not << :foo}.to raise_error(Virtus::CoercionError)
         end
       end
     end

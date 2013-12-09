@@ -8,7 +8,7 @@ module Daedal
     class DisMaxQuery < BaseQuery
   
       # required attributes
-      attribute :queries, Attributes::QueryArray[Daedal::Queries::BaseQuery], default: Array.new
+      attribute :queries, Attributes::QueryArray, default: Array.new
   
       # non required attributes
       attribute :tie_breaker, Float, required: false

@@ -79,4 +79,4 @@ DEPENDENCIES
   guard-rspec
   require_all
   rspec
-  virtus (= 1.0.0)
+  virtus (>= 1.0.0)
