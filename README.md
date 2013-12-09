@@ -1,5 +1,6 @@
 Daedal
 ======
+[![Build Status](https://travis-ci.org/cschuch/daedal.png?branch=master)](https://travis-ci.org/cschuch/daedal)
 
 This repository contains a set of Ruby classes designed to make ElasticSearch
 query creation simpler and easier to debug. The goal is to reproduce all
