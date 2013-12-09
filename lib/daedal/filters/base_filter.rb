@@ -6,7 +6,7 @@ module Daedal
       include Virtus.model strict: true
 
       def to_hash
-        {}
+        nil
       end
 
       def to_json

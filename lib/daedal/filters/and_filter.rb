@@ -7,10 +7,14 @@ module Daedal
     class AndFilter < BaseFilter
   
       # required attributes
-      attribute :filters, Attributes::FilterArray[BaseFilter]
+      attribute :filters, Attributes::FilterArray
   
       def to_hash
-        {:and => filters.map {|f| f.to_hash}}
+        unless filters.empty?
+          {:and => filters.map {|f| f.to_hash}}
+        else
+          super
+        end
       end
     end
   end

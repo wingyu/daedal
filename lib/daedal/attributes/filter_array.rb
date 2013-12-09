@@ -11,6 +11,14 @@ module Daedal
           raise Virtus::CoercionError.new(f, 'Daedal::Filters::BaseFilter')
         end
       end
+
+      def unshift(f)
+        if f.is_a? Daedal::Filters::BaseFilter
+          super f
+        else
+          raise Virtus::CoercionError.new(f, 'Daedal::Filters::BaseFilter')
+        end
+      end
     end
   end
 end

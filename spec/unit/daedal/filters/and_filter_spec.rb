@@ -16,7 +16,7 @@ describe Daedal::Filters::AndFilter do
       subject.new
     end
     let(:hash_filter) do
-      {:and => []}
+      nil
     end
     it 'will have an empty array of filters set' do
       expect(filter.filters).to eq []

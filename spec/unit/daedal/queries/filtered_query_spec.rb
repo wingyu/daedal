@@ -37,7 +37,7 @@ describe Daedal::Queries::FilteredQuery do
       expect(query.filter.to_hash).to eq base_filter.to_hash
     end
     it 'will have the correct hash representation' do
-      expect(query.to_hash).to eq({filtered: {query: {match_all: {}}, filter: {}}})
+      expect(query.to_hash).to eq({filtered: {query: {match_all: {}}, filter: nil}})
     end
   end
 
