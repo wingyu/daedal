@@ -119,7 +119,7 @@ assign an invalid value to a specific field, which would then result in
 an error response when sending the query to the server. For instance, the query:
 
 ``` ruby
-constant_score_query = {'constant_score' => {'boost' => 'foo', 'query': {'match_all': {}}}}
+constant_score_query = {'constant_score' => {'boost' => 'foo', 'query' => {'match_all' => {}}}}
 ```
 
 would yield a server error, since the `boost` parameter must be a number.
