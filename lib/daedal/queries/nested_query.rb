@@ -4,12 +4,12 @@ module Daedal
     class NestedQuery < Query
   
       # required attributes
-      attribute :path, Symbol
-      attribute :query, Daedal::Attributes::Query
+      attribute :path,        Symbol
+      attribute :query,       Daedal::Attributes::Query
   
       # non required attributes
-      attribute :score_mode, Daedal::Attributes::ScoreMode, required: false
-      attribute :name, Symbol, required: false
+      attribute :score_mode,  Daedal::Attributes::ScoreMode,  required: false
+      attribute :name,        Symbol,                         required: false
   
       def to_hash
         result = {nested: {path: path, query: query.to_hash}}

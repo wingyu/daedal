@@ -4,11 +4,11 @@ module Daedal
     class PrefixQuery < Query
   
       # required attributes
-      attribute :field, Symbol
-      attribute :query, Daedal::Attributes::LowerCaseString
+      attribute :field,     Symbol
+      attribute :query,     Daedal::Attributes::LowerCaseString
 
       # non required attributes
-      attribute :boost, Float, required: false
+      attribute :boost,     Float, required: false
   
       def to_hash
         result = {prefix: {field => query}}

@@ -4,18 +4,18 @@ module Daedal
     class MatchQuery < Query
   
       # required attributes
-      attribute :field, Symbol
-      attribute :query, Symbol
+      attribute :field,                 Symbol
+      attribute :query,                 Symbol
   
       # non required attributes
-      attribute :operator, Daedal::Attributes::Operator, required: false
-      attribute :minimum_should_match, Integer, required: false
-      attribute :cutoff_frequency, Float, required: false
-      attribute :type, Daedal::Attributes::MatchType, required: false
-      attribute :analyzer, Symbol, required: false
-      attribute :boost, Integer, required: false
-      attribute :fuzziness, Float, required: false
-      attribute :slop, Integer, required: false
+      attribute :operator,              Daedal::Attributes::Operator,   required: false
+      attribute :minimum_should_match,  Integer,                        required: false
+      attribute :cutoff_frequency,      Float,                          required: false
+      attribute :type,                  Daedal::Attributes::MatchType,  required: false
+      attribute :analyzer,              Symbol,                         required: false
+      attribute :boost,                 Integer,                        required: false
+      attribute :fuzziness,             Float,                          required: false
+      attribute :slop,                  Integer,                        required: false
   
       def to_hash
   

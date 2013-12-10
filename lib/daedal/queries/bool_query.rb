@@ -7,15 +7,15 @@ module Daedal
 
       # should, must, and must_not must be an array of queries
       # these queries must inherit from the BaseQuery class
-      attribute :should, Daedal::Attributes::QueryArray, default: Array.new
-      attribute :must, Daedal::Attributes::QueryArray, default: Array.new
-      attribute :must_not, Daedal::Attributes::QueryArray, default: Array.new
+      attribute :should,                Daedal::Attributes::QueryArray, default: Array.new
+      attribute :must,                  Daedal::Attributes::QueryArray, default: Array.new
+      attribute :must_not,              Daedal::Attributes::QueryArray, default: Array.new
   
       # non required attributes
-      attribute :minimum_should_match, Integer, required: false
-      attribute :boost, Integer, required: false
-      attribute :name, Symbol, required: false
-      attribute :disable_coord, Boolean, required: false
+      attribute :minimum_should_match,  Integer,  required: false
+      attribute :boost,                 Integer,  required: false
+      attribute :name,                  Symbol,   required: false
+      attribute :disable_coord,         Boolean,  required: false
   
       def to_hash
         result = {bool: {should: should.map {|q| q.to_hash}, must: must.map {|q| q.to_hash}, must_not: must_not.map {|q| q.to_hash}}}

@@ -4,13 +4,13 @@ module Daedal
     class GeoDistanceFilter < Filter
   
       # required attributes
-      attribute :field, Symbol
-      attribute :lat, Float
-      attribute :lon, Float
-      attribute :distance, Float
+      attribute :field,     Symbol
+      attribute :lat,       Float
+      attribute :lon,       Float
+      attribute :distance,  Float
 
       # non required attributes
-      attribute :unit, Daedal::Attributes::DistanceUnit, default: 'km'
+      attribute :unit,      Daedal::Attributes::DistanceUnit, default: 'km'
   
       def full_distance
         "#{distance}#{unit}"

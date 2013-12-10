@@ -4,12 +4,12 @@ module Daedal
     class DisMaxQuery < Query
   
       # required attributes
-      attribute :queries, Daedal::Attributes::QueryArray, default: Array.new
+      attribute :queries,       Daedal::Attributes::QueryArray, default: Array.new
   
       # non required attributes
-      attribute :tie_breaker, Float, required: false
-      attribute :boost, Integer, required: false
-      attribute :name, Symbol, required: false
+      attribute :tie_breaker,   Float,    required: false
+      attribute :boost,         Integer,  required: false
+      attribute :name,          Symbol,   required: false
   
       def to_hash
         result = {dis_max: {queries: queries.map {|q| q.to_hash }}}
