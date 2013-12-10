@@ -1,9 +1,5 @@
-require 'daedal/queries/query'
-require 'daedal/attributes'
-
 module Daedal
   module Queries
-
     """Class for the match query"""
     class MatchQuery < Query
   
@@ -12,10 +8,10 @@ module Daedal
       attribute :query, Symbol
   
       # non required attributes
-      attribute :operator, Attributes::Operator, required: false
+      attribute :operator, Daedal::Attributes::Operator, required: false
       attribute :minimum_should_match, Integer, required: false
       attribute :cutoff_frequency, Float, required: false
-      attribute :type, Attributes::MatchType, required: false
+      attribute :type, Daedal::Attributes::MatchType, required: false
       attribute :analyzer, Symbol, required: false
       attribute :boost, Integer, required: false
       attribute :fuzziness, Float, required: false

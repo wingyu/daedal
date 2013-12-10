@@ -1,6 +1,3 @@
-require 'daedal/queries/query'
-require 'daedal/attributes'
-
 module Daedal
   module Queries
     """Class for the constant score query"""
@@ -10,8 +7,8 @@ module Daedal
       attribute :boost, Float
 
       # non required attributes, but one must be required of the two
-      attribute :query, Attributes::Query, required: false
-      attribute :filter, Attributes::Filter, required: false
+      attribute :query, Daedal::Attributes::Query, required: false
+      attribute :filter, Daedal::Attributes::Filter, required: false
 
       # you must require *one of* query or filter in order for this to be valid
       def initialize(options={})

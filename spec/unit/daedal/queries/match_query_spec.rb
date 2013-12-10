@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'daedal/queries'
 
 describe Daedal::Queries::MatchQuery do
 

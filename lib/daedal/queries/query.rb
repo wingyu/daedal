@@ -1,8 +1,5 @@
-require 'virtus'
-
 module Daedal
   module Queries
-
     """Base class for queries. All other queries
     should inherit from this class directly in order to
     allow for data-type coercion for compound queries

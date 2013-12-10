@@ -1,6 +1,3 @@
-require 'daedal/filters/filter'
-require 'daedal/attributes'
-
 module Daedal
   module Filters
     """Class for the basic term filter"""

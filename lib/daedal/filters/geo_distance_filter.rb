@@ -1,6 +1,3 @@
-require 'daedal/filters/filter'
-require 'daedal/attributes'
-
 module Daedal
   module Filters
     """Class for the basic term filter"""
@@ -13,7 +10,7 @@ module Daedal
       attribute :distance, Float
 
       # non required attributes
-      attribute :unit, Attributes::DistanceUnit, default: 'km'
+      attribute :unit, Daedal::Attributes::DistanceUnit, default: 'km'
   
       def full_distance
         "#{distance}#{unit}"

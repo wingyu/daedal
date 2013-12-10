@@ -1,5 +1,3 @@
-require 'virtus'
-
 module Daedal
   module Filters
     class Filter

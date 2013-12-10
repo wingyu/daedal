@@ -3,7 +3,6 @@ require File.expand_path('../lib/daedal/version', __FILE__)
 Gem::Specification.new do |s|
   s.name        = 'daedal'
   s.version     = Daedal::VERSION
-  s.date        = '2013-12-06'
   s.summary     = "ElasticSearch Query DSL Builders"
   s.description = "Classes for easier ElasticSearch query creation"
   s.authors     = ["Christopher Schuch"]

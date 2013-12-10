@@ -95,4 +95,3 @@ DEPENDENCIES
   guard
   guard-rspec
   rspec
-  simplecov

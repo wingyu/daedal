@@ -1,6 +1,3 @@
-require 'daedal/queries/query'
-require 'daedal/attributes'
-
 module Daedal
   module Queries
     """Class for the bool query"""
@@ -10,9 +7,9 @@ module Daedal
 
       # should, must, and must_not must be an array of queries
       # these queries must inherit from the BaseQuery class
-      attribute :should, Attributes::QueryArray, default: Array.new
-      attribute :must, Attributes::QueryArray, default: Array.new
-      attribute :must_not, Attributes::QueryArray, default: Array.new
+      attribute :should, Daedal::Attributes::QueryArray, default: Array.new
+      attribute :must, Daedal::Attributes::QueryArray, default: Array.new
+      attribute :must_not, Daedal::Attributes::QueryArray, default: Array.new
   
       # non required attributes
       attribute :minimum_should_match, Integer, required: false

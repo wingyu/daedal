@@ -1,6 +1,3 @@
-require 'daedal/queries/query'
-require 'daedal/attributes'
-
 module Daedal
   module Queries
     """Class for the bool query"""
@@ -8,10 +5,10 @@ module Daedal
   
       # required attributes
       attribute :path, Symbol
-      attribute :query, Attributes::Query
+      attribute :query, Daedal::Attributes::Query
   
       # non required attributes
-      attribute :score_mode, Attributes::ScoreMode, required: false
+      attribute :score_mode, Daedal::Attributes::ScoreMode, required: false
       attribute :name, Symbol, required: false
   
       def to_hash

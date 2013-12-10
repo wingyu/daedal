@@ -1,14 +1,10 @@
-require 'daedal/queries/query'
-require 'daedal/attributes'
-
 module Daedal
   module Queries
-
     """Class for the dis max query"""
     class DisMaxQuery < Query
   
       # required attributes
-      attribute :queries, Attributes::QueryArray, default: Array.new
+      attribute :queries, Daedal::Attributes::QueryArray, default: Array.new
   
       # non required attributes
       attribute :tie_breaker, Float, required: false

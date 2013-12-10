@@ -1,6 +1,3 @@
-require 'daedal/queries/query'
-require 'daedal/attributes'
-
 module Daedal
   module Queries
     """Class for the prefix query"""
@@ -8,7 +5,7 @@ module Daedal
   
       # required attributes
       attribute :field, Symbol
-      attribute :query, Attributes::LowerCaseString
+      attribute :query, Daedal::Attributes::LowerCaseString
 
       # non required attributes
       attribute :boost, Float, required: false

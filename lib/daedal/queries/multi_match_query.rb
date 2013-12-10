@@ -1,9 +1,5 @@
-require 'daedal/queries/query'
-require 'daedal/attributes'
-
 module Daedal
   module Queries
-
     """Class for the multi match query"""
     class MultiMatchQuery < Query
   
@@ -14,10 +10,10 @@ module Daedal
       # non required attributes
       attribute :use_dis_max, Boolean, default: true
       attribute :tie_breaker, Float, default: 0.0
-      attribute :operator, Attributes::Operator, required: false
+      attribute :operator, Daedal::Attributes::Operator, required: false
       attribute :minimum_should_match, Integer, required: false
       attribute :cutoff_frequency, Float, required: false
-      attribute :type, Attributes::MatchType, required: false
+      attribute :type, Daedal::Attributes::MatchType, required: false
       attribute :analyzer, Symbol, required: false
       attribute :boost, Integer, required: false
       attribute :fuzziness, Float, required: false

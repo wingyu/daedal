@@ -1,5 +1,3 @@
-require 'daedal/queries/query'
-
 module Daedal
   module Queries
     """Class for the match all query"""

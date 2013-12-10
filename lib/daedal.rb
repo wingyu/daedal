@@ -1,9 +1,35 @@
 require 'json'
+require 'virtus'
 
-require 'daedal/queries'
-require 'daedal/filters'
-require 'daedal/attributes'
+# base query and filter classes needed by the attributes
+require 'daedal/queries/query'
+require 'daedal/filters/filter'
 
-module Daedal
+# attributes
+require 'daedal/attributes/operator'
+require 'daedal/attributes/match_type'
+require 'daedal/attributes/query_array'
+require 'daedal/attributes/filter_array'
+require 'daedal/attributes/score_mode'
+require 'daedal/attributes/lower_case_string'
+require 'daedal/attributes/distance_unit'
+require 'daedal/attributes/query'
+require 'daedal/attributes/filter'
 
-end
+# filters
+require 'daedal/filters/term_filter'
+require 'daedal/filters/terms_filter'
+require 'daedal/filters/range_filter'
+require 'daedal/filters/geo_distance_filter'
+require 'daedal/filters/and_filter'
+
+# queries
+require 'daedal/queries/match_all_query'
+require 'daedal/queries/bool_query'
+require 'daedal/queries/constant_score_query'
+require 'daedal/queries/dis_max_query'
+require 'daedal/queries/filtered_query'
+require 'daedal/queries/match_query'
+require 'daedal/queries/multi_match_query'
+require 'daedal/queries/nested_query'
+require 'daedal/queries/prefix_query'

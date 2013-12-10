@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'daedal/filters'
 
 describe Daedal::Filters::GeoDistanceFilter do
 
