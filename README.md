@@ -105,15 +105,15 @@ term_filter.to_json # => "{\"term\":{\"foo\":\"bar\"}}"
 
 To date (12/8/2013), I have implemented the following filters:
 * [and filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-and-filter.html)
+* [bool filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-bool-filter.html)
 * [geo distance filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-geo-distance-filter.html)
+* [or filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-or-filter.html)
 * [range filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-range-filter.html)
 * [term filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-term-filter.html)
 * [terms filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-terms-filter.html)
 
 To be implemented next:
-* [bool filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-bool-filter.html)
 * [nested filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-nested-filter.html)
-* [or filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-or-filter.html)
 
 ### Type checking and attribute coercion
 

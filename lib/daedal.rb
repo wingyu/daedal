@@ -22,6 +22,8 @@ require 'daedal/filters/terms_filter'
 require 'daedal/filters/range_filter'
 require 'daedal/filters/geo_distance_filter'
 require 'daedal/filters/and_filter'
+require 'daedal/filters/or_filter'
+require 'daedal/filters/bool_filter'
 
 # queries
 require 'daedal/queries/match_all_query'
