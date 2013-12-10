@@ -1,4 +1,4 @@
-require 'daedal/queries/base_query'
+require 'daedal/queries/query'
 require 'daedal/queries/bool_query'
 require 'daedal/queries/constant_score_query'
 require 'daedal/queries/dis_max_query'

@@ -1,11 +1,10 @@
-require 'daedal/queries/base_query'
-require 'daedal/filters/base_filter'
+require 'daedal/queries/query'
 require 'daedal/attributes'
 
 module Daedal
   module Queries
     """Class for the constant score query"""
-    class ConstantScoreQuery < BaseQuery
+    class ConstantScoreQuery < Query
 
       # required attributes
       attribute :boost, Float

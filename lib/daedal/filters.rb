@@ -1,4 +1,4 @@
-require 'daedal/filters/base_filter'
+require 'daedal/filters/filter'
 require 'daedal/filters/term_filter'
 require 'daedal/filters/terms_filter'
 require 'daedal/filters/range_filter'

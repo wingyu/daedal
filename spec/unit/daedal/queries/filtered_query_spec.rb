@@ -23,7 +23,7 @@ describe Daedal::Queries::FilteredQuery do
   context 'with no query or filter specified' do
 
     let(:base_filter) do
-      Daedal::Filters::BaseFilter.new
+      Daedal::Filters::Filter.new
     end
     let(:match_all_query) do
       Daedal::Queries::MatchAllQuery.new

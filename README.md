@@ -144,13 +144,13 @@ Currently, I've only made it through a fraction of the entire Query DSL, but wil
 achieve complete coverage as quickly as possible. If you need to use a query that
 I haven't gotten to yet, or if you want to create your own more specialized queries within
 your own project, defining the query classes is relatively straightforward - just make
-your new class a sublass of the `Daedal::Queries::BaseQuery` or `Daedal::Filters::BaseFilter`
+your new class a sublass of the `Daedal::Queries::Query` or `Daedal::Filters::Filter`
 classes, and define the `to_hash` method. All methods made available by including `Virtus.model` in your
 class will be available to you, as well.
 
 Example:
 ``` ruby
-class MyQuery < Daedal::Queries::BaseQuery
+class MyQuery < Daedal::Queries::Query
   
   # define the attributes that you need in your query
   attribute :foo, String

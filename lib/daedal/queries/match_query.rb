@@ -1,11 +1,11 @@
-require 'daedal/queries/base_query'
+require 'daedal/queries/query'
 require 'daedal/attributes'
 
 module Daedal
   module Queries
 
     """Class for the match query"""
-    class MatchQuery < BaseQuery
+    class MatchQuery < Query
   
       # required attributes
       attribute :field, Symbol

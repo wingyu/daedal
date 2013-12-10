@@ -1,10 +1,10 @@
-require 'daedal/queries/base_query'
+require 'daedal/queries/query'
 require 'daedal/attributes'
 
 module Daedal
   module Queries
     """Class for the bool query"""
-    class BoolQuery < BaseQuery
+    class BoolQuery < Query
   
       # required attributes
 

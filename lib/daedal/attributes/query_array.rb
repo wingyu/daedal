@@ -7,10 +7,10 @@ module Daedal
       # an error if you don't try to append a query
 
       def <<(q)
-        if q.is_a? Daedal::Queries::BaseQuery
+        if q.is_a? Daedal::Queries::Query
           super q
         else
-          raise Virtus::CoercionError.new(q, 'Daedal::Queries::BaseQuery')
+          raise Virtus::CoercionError.new(q, 'Daedal::Queries::Query')
         end
       end
     end

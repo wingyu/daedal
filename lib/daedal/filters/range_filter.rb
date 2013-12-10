@@ -1,9 +1,9 @@
-require 'daedal/filters/base_filter'
+require 'daedal/filters/filter'
 
 module Daedal
   module Filters
     """Class for the basic term filter"""
-    class RangeFilter < BaseFilter
+    class RangeFilter < Filter
   
       # required attributes
       attribute :field, Symbol

@@ -2,7 +2,7 @@ require 'virtus'
 
 module Daedal
   module Filters
-    class BaseFilter
+    class Filter
       include Virtus.model strict: true
 
       def to_hash

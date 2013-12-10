@@ -1,9 +1,9 @@
-require 'daedal/queries/base_query'
+require 'daedal/queries/query'
 
 module Daedal
   module Queries
     """Class for the match all query"""
-    class MatchAllQuery < BaseQuery
+    class MatchAllQuery < Query
       def to_hash
         {match_all: {}}
       end
