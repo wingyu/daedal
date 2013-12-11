@@ -8,14 +8,14 @@ module Daedal
       attribute :fields,                Array[Daedal::Attributes::Field]
   
       # non required attributes
-      attribute :use_dis_max,           Boolean,                        default: true
-      attribute :tie_breaker,           Float,                          default: 0.0
+      attribute :use_dis_max,           Boolean,                        required: false
+      attribute :tie_breaker,           Float,                          required: false
       attribute :operator,              Daedal::Attributes::Operator,   required: false
       attribute :minimum_should_match,  Integer,                        required: false
       attribute :cutoff_frequency,      Float,                          required: false
       attribute :type,                  Daedal::Attributes::MatchType,  required: false
       attribute :analyzer,              Symbol,                         required: false
-      attribute :boost,                 Integer,                        required: false
+      attribute :boost,                 Daedal::Attributes::Boost,      required: false
       attribute :fuzziness,             Float,                          required: false
   
       # Fields cannot be an empty array... should eventually refactor this kind of thing out of initialize

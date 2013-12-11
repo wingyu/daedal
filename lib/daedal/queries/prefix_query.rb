@@ -8,7 +8,7 @@ module Daedal
       attribute :query,     Daedal::Attributes::LowerCaseString
 
       # non required attributes
-      attribute :boost,     Float, required: false
+      attribute :boost,     Daedal::Attributes::Boost, required: false
   
       def to_hash
         result = {prefix: {field => query}}

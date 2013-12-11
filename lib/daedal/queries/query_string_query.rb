@@ -18,7 +18,7 @@ module Daedal
       attribute :fuzzy_min_sim,                 Float, required: false
       attribute :fuzzy_prefix_length,           Integer, required: false
       attribute :phrase_slop,                   Integer, required: false
-      attribute :boost,                         Float, required: false
+      attribute :boost,                         Daedal::Attributes::Boost, required: false
       attribute :analyze_wildcard,              Boolean, required: false
       attribute :auto_generate_phrase_queries,  Boolean, required: false
       attribute :minimum_should_match,          Integer, required: false

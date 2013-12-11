@@ -4,7 +4,7 @@ module Daedal
     class ConstantScoreQuery < Query
 
       # required attributes
-      attribute :boost,     Float
+      attribute :boost,     Daedal::Attributes::Boost
 
       # non required attributes, but one must be required of the two
       attribute :query,     Daedal::Attributes::Query,  required: false

@@ -4,6 +4,7 @@ require 'virtus'
 # base query and filter classes needed by the attributes
 require 'daedal/queries/query'
 require 'daedal/filters/filter'
+require 'daedal/facets/facet'
 
 # attributes
 require 'daedal/attributes/operator'
@@ -17,6 +18,7 @@ require 'daedal/attributes/query'
 require 'daedal/attributes/filter'
 require 'daedal/attributes/field'
 require 'daedal/attributes/query_value'
+require 'daedal/attributes/boost'
 
 # filters
 require 'daedal/filters/term_filter'
@@ -39,3 +41,5 @@ require 'daedal/queries/nested_query'
 require 'daedal/queries/prefix_query'
 require 'daedal/queries/fuzzy_query'
 require 'daedal/queries/query_string_query'
+
+# facets

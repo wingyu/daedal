@@ -53,7 +53,7 @@ describe Daedal::Queries::BoolQuery do
 
     context 'with a boost specified' do
       before do
-        hash_query[:bool][:boost] = 2
+        hash_query[:bool][:boost] = 2.0
       end
       let(:query_with_boost) do
         subject.new(boost: 2)

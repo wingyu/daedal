@@ -51,7 +51,7 @@ describe Daedal::Queries::DisMaxQuery do
 
     context 'with a boost specified' do
       before do
-        hash_query[:dis_max][:boost] = 2
+        hash_query[:dis_max][:boost] = 2.0
       end
       let(:query_with_boost) do
         subject.new(boost: 2)

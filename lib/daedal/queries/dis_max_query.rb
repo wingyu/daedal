@@ -4,11 +4,11 @@ module Daedal
     class DisMaxQuery < Query
   
       # required attributes
-      attribute :queries,       Daedal::Attributes::QueryArray, default: Array.new
+      attribute :queries,       Daedal::Attributes::QueryArray
   
       # non required attributes
       attribute :tie_breaker,   Float,    required: false
-      attribute :boost,         Integer,  required: false
+      attribute :boost,         Daedal::Attributes::Boost,  required: false
       attribute :name,          Symbol,   required: false
   
       def to_hash

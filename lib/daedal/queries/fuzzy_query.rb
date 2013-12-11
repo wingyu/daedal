@@ -8,7 +8,7 @@ module Daedal
       attribute :query,           Daedal::Attributes::QueryValue
 
       # non required attributes
-      attribute :boost,           Float,                          required: false
+      attribute :boost,           Daedal::Attributes::Boost,      required: false
       attribute :min_similarity,  Daedal::Attributes::QueryValue, required: false
       attribute :prefix_length,   Integer,                        required: false
   

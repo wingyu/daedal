@@ -13,7 +13,7 @@ module Daedal
       attribute :cutoff_frequency,      Float,                          required: false
       attribute :type,                  Daedal::Attributes::MatchType,  required: false
       attribute :analyzer,              Symbol,                         required: false
-      attribute :boost,                 Integer,                        required: false
+      attribute :boost,                 Daedal::Attributes::Boost,      required: false
       attribute :fuzziness,             Float,                          required: false
       attribute :slop,                  Integer,                        required: false
   

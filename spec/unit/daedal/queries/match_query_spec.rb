@@ -192,11 +192,11 @@ describe Daedal::Queries::MatchQuery do
     end
 
     before do
-      base_query[:match][:foo][:boost] = 2
+      base_query[:match][:foo][:boost] = 2.0
     end
 
     it 'will set the phrase type to :phrase' do
-      expect(match_query.boost).to eq 2
+      expect(match_query.boost).to eq 2.0
     end
 
     it 'will have the correct hash representation' do

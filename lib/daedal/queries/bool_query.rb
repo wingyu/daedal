@@ -7,13 +7,13 @@ module Daedal
 
       # should, must, and must_not must be an array of queries
       # these queries must inherit from the BaseQuery class
-      attribute :should,                Daedal::Attributes::QueryArray, default: Array.new
-      attribute :must,                  Daedal::Attributes::QueryArray, default: Array.new
-      attribute :must_not,              Daedal::Attributes::QueryArray, default: Array.new
+      attribute :should,                Daedal::Attributes::QueryArray
+      attribute :must,                  Daedal::Attributes::QueryArray
+      attribute :must_not,              Daedal::Attributes::QueryArray
   
       # non required attributes
       attribute :minimum_should_match,  Integer,  required: false
-      attribute :boost,                 Integer,  required: false
+      attribute :boost,                 Daedal::Attributes::Boost,  required: false
       attribute :name,                  Symbol,   required: false
       attribute :disable_coord,         Boolean,  required: false
   
