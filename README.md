@@ -32,6 +32,8 @@ gem 'daedal'
 Usage
 --------
 
+See the [Daedal Wiki](https://github.com/cschuch/daedal/wiki) for some examples.
+
 ### ElasticSearch Query DSL
 
 Other Ruby packages for ElasticSearch allow you to create queries either as
