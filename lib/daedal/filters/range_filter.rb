@@ -4,11 +4,13 @@ module Daedal
     class RangeFilter < Filter
   
       # required attributes
-      attribute :field, Symbol
-      attribute :gte
-      attribute :lte
-      attribute :gt
-      attribute :lt
+      attribute :field, Daedal::Attributes::Field
+
+      # non required attributes
+      attribute :gte,   Daedal::Attributes::QueryValue, required: false
+      attribute :lte,   Daedal::Attributes::QueryValue, required: false
+      attribute :gt,    Daedal::Attributes::QueryValue, required: false
+      attribute :lt,    Daedal::Attributes::QueryValue, required: false
 
       def initialize(options={})
         super options

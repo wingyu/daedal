@@ -4,7 +4,7 @@ module Daedal
     class NestedQuery < Query
   
       # required attributes
-      attribute :path,        Symbol
+      attribute :path,        Daedal::Attributes::Field
       attribute :query,       Daedal::Attributes::Query
   
       # non required attributes
@@ -13,8 +13,8 @@ module Daedal
   
       def to_hash
         result = {nested: {path: path, query: query.to_hash}}
-        options = {score_mode: score_mode, _name: name}
-        result[:nested].merge!(options.select { |k,v| !v.nil? })
+        options = {score_mode: score_mode, _name: name}.select { |k,v| !v.nil? }
+        result[:nested].merge! options
 
         result
       end

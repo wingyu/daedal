@@ -4,8 +4,8 @@ module Daedal
     class MatchQuery < Query
   
       # required attributes
-      attribute :field,                 Symbol
-      attribute :query,                 Symbol
+      attribute :field,                 Daedal::Attributes::Field
+      attribute :query,                 Daedal::Attributes::QueryValue
   
       # non required attributes
       attribute :operator,              Daedal::Attributes::Operator,   required: false

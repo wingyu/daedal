@@ -4,8 +4,8 @@ module Daedal
     class MultiMatchQuery < Query
   
       # required attributes
-      attribute :query,                 Symbol
-      attribute :fields,                Array[Symbol]
+      attribute :query,                 Daedal::Attributes::QueryValue
+      attribute :fields,                Array[Daedal::Attributes::Field]
   
       # non required attributes
       attribute :use_dis_max,           Boolean,                        default: true

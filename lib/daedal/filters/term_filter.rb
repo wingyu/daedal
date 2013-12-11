@@ -4,8 +4,8 @@ module Daedal
     class TermFilter < Filter
   
       # required attributes
-      attribute :field,     Symbol
-      attribute :term,      Symbol
+      attribute :field,     Daedal::Attributes::Field
+      attribute :term,      Daedal::Attributes::QueryValue
   
       def to_hash
         {term: {field => term}}

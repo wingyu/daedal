@@ -34,9 +34,12 @@ describe Daedal::Filters::TermsFilter do
     let(:filter) do
       subject.new(field: field, terms: terms.map {|t| t.to_s})
     end
+    let(:hash_filter) do
+      {terms: {field => terms.map {|t| t.to_s}}}
+    end
     it 'will populate the field and term attributes appropriately' do
       expect(filter.field).to eq field
-      expect(filter.terms).to eq terms
+      expect(filter.terms).to eq terms.map {|t| t.to_s}
     end
     it 'will have the correct hash representation' do
       expect(filter.to_hash).to eq hash_filter

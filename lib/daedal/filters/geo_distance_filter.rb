@@ -4,7 +4,7 @@ module Daedal
     class GeoDistanceFilter < Filter
   
       # required attributes
-      attribute :field,     Symbol
+      attribute :field,     Daedal::Attributes::Field
       attribute :lat,       Float
       attribute :lon,       Float
       attribute :distance,  Float

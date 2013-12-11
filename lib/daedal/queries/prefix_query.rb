@@ -4,7 +4,7 @@ module Daedal
     class PrefixQuery < Query
   
       # required attributes
-      attribute :field,     Symbol
+      attribute :field,     Daedal::Attributes::Field
       attribute :query,     Daedal::Attributes::LowerCaseString
 
       # non required attributes
@@ -12,8 +12,9 @@ module Daedal
   
       def to_hash
         result = {prefix: {field => query}}
-        options = {boost: boost}
-        result[:prefix].merge!(options.select { |k,v| !v.nil? })
+        unless boost.nil?
+          result[:prefix][:boost] = boost
+        end
 
         result
       end
