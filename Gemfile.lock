@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    daedal (0.0.4)
+    daedal (0.0.5)
       virtus (>= 1.0.0)
 
 GEM
