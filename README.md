@@ -168,8 +168,8 @@ will result in an error:
 
 ``` ruby
 dis_max_query = Daedal::Queries::DisMaxQuery.new
-dis_max_query.queries << :foo
 
+dis_max_query.queries << :foo
 # Virtus::CoercionError: Failed to coerce :foo into "Daedal::Queries::Query"
 ```
 
