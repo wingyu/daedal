@@ -15,7 +15,7 @@ However, elaborate queries often take the form of a complex, deeply nested hash,
 which can become difficult to create or traverse. By wrapping the core components of the
 query DSL into Ruby objects, Daedal addresses the following issues:
 
-* Constructing a large nested hash can be a headache, and using tools like `Hashie` may result in performance issues
+* Constructing a large nested hash can be a headache, and using some of the popular hash extensions may result in performance issues
 * Remembering all the optional parameters each query can take, where they reside within the query structure, and what values they can take can be challenging
 * Improperly structured queries, or queries with bad parameters, are hard to catch before sending to the server (and receiving an error)
 * Debugging invalid queries can be a grueling task
