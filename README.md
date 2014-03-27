@@ -136,8 +136,6 @@ Currently, the following filters have been implemented:
 * [range filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-range-filter.html)
 * [term filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-term-filter.html)
 * [terms filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-terms-filter.html)
-
-On deck:
 * [nested filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-nested-filter.html)
 
 ### Type checking and attribute coercion
