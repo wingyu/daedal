@@ -125,7 +125,7 @@ describe Daedal::Queries::MultiMatchQuery do
       base_query[:multi_match][:minimum_should_match] = 2
     end
 
-    it 'will set the phrase type to :phrase' do
+    it 'will set the minimum_should_match' do
       expect(query.minimum_should_match).to eq 2
     end
 
@@ -153,7 +153,7 @@ describe Daedal::Queries::MultiMatchQuery do
       base_query[:multi_match][:cutoff_frequency] = 0.5
     end
 
-    it 'will set the phrase type to :phrase' do
+    it 'will set the cutoff_frequency' do
       expect(query.cutoff_frequency).to eq 0.5
     end
 
@@ -181,7 +181,7 @@ describe Daedal::Queries::MultiMatchQuery do
       base_query[:multi_match][:analyzer] = :foo
     end
 
-    it 'will set the phrase type to :phrase' do
+    it 'will set the analyzer' do
       expect(query.analyzer).to eq :foo
     end
 
@@ -203,7 +203,7 @@ describe Daedal::Queries::MultiMatchQuery do
       base_query[:multi_match][:boost] = 2.0
     end
 
-    it 'will set the phrase type to :phrase' do
+    it 'will set the boost' do
       expect(query.boost).to eq 2.0
     end
 
@@ -231,7 +231,7 @@ describe Daedal::Queries::MultiMatchQuery do
       base_query[:multi_match][:fuzziness] = 0.5
     end
 
-    it 'will set the phrase type to :phrase' do
+    it 'will set the fuzziness' do
       expect(query.fuzziness).to eq 0.5
     end
 
@@ -244,9 +244,38 @@ describe Daedal::Queries::MultiMatchQuery do
     end
   end
 
-  context 'with a non float or integer fuzziness specified' do
+  context 'with an invalid fuzziness specified' do
     it 'will raise an error' do
-      expect {subject.new(query: term, fields: fields, fuzziness: 'foo')}.to raise_error(Virtus::CoercionError)
+      expect {subject.new(query: term, fields: fields, fuzziness: {})}.to raise_error(Virtus::CoercionError)
     end
   end
+
+  context 'with prefix_length specified' do
+    context 'when given an int' do
+      before { base_query[:multi_match][:prefix_length] = 2 }
+      it 'will use the prefix_length' do
+        expect(subject.new(query: term, fields: fields, prefix_length: 2).to_hash).to eq base_query
+      end
+    end
+    context 'with invalid input' do
+      it 'will raise an error' do
+        expect {subject.new(query: term, fields: fields, prefix_length: {})}.to raise_error(Virtus::CoercionError)
+      end
+    end
+  end
+
+  context 'with max_expansions specified' do
+    context 'when given an int' do
+      before { base_query[:multi_match][:max_expansions] = 2 }
+      it 'will use the max_expansions' do
+        expect(subject.new(query: term, fields: fields, max_expansions: 2).to_hash).to eq base_query
+      end
+    end
+    context 'with invalid input' do
+      it 'will raise an error' do
+        expect {subject.new(query: term, fields: fields, max_expansions: {})}.to raise_error(Virtus::CoercionError)
+      end
+    end
+  end
+
 end

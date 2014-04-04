@@ -2,7 +2,7 @@ module Daedal
   module Attributes
     """Custom coercer for the type attribute"""
     class MatchType < Virtus::Attribute
-      ALLOWED_MATCH_TYPES = [:phrase, :phrase_prefix]
+      ALLOWED_MATCH_TYPES = [:phrase, :phrase_prefix, :best_fields, :most_fields, :cross_fields]
       def coerce(value)
         unless value.nil?
           value = value.to_sym

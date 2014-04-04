@@ -251,7 +251,7 @@ describe Daedal::Queries::MatchQuery do
       base_query[:match][:foo][:fuzziness] = 0.5
     end
 
-    it 'will set the phrase type to :phrase' do
+    it 'will set fuzziness correctly' do
       expect(match_query.fuzziness).to eq 0.5
     end
 
@@ -264,9 +264,60 @@ describe Daedal::Queries::MatchQuery do
     end
   end
 
-  context 'with a non float or integer fuzziness specified' do
+  context 'with an invalid fuzziness specified' do
     it 'will raise an error' do
-      expect {subject.new(field: :foo, query: :bar, fuzziness: 'foo')}.to raise_error(Virtus::CoercionError)
+      expect {subject.new(field: :foo, query: :bar, fuzziness: {})}.to raise_error(Virtus::CoercionError)
+    end
+  end
+
+  context 'with a lenient specified' do
+    let(:query) do
+      subject.new field: :foo, query: :bar, lenient: true
+    end
+    
+    before do
+      base_query[:match][:foo][:lenient] = true
+    end
+    it 'will set the lenient correctly' do
+      expect(query.lenient).to eq true
+    end
+    it 'will have the correct hash and json representations' do
+      expect(query.to_hash).to eq base_query
+      expect(query.to_json).to eq base_query.to_json
+    end
+  end
+
+  context 'with a max_expansions specified' do
+    let(:query) do
+      subject.new field: :foo, query: :bar, max_expansions: 1
+    end
+    
+    before do
+      base_query[:match][:foo][:max_expansions] = 1
+    end
+    it 'will set the max_expansions correctly' do
+      expect(query.max_expansions).to eq 1
+    end
+    it 'will have the correct hash and json representations' do
+      expect(query.to_hash).to eq base_query
+      expect(query.to_json).to eq base_query.to_json
+    end
+  end
+
+  context 'with a prefix_length specified' do
+    let(:query) do
+      subject.new field: :foo, query: :bar, prefix_length: 1
+    end
+    
+    before do
+      base_query[:match][:foo][:prefix_length] = 1
+    end
+    it 'will set the prefix_length correctly' do
+      expect(query.prefix_length).to eq 1
+    end
+    it 'will have the correct hash and json representations' do
+      expect(query.to_hash).to eq base_query
+      expect(query.to_json).to eq base_query.to_json
     end
   end
 end

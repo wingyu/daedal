@@ -86,4 +86,46 @@ describe Daedal::Queries::FuzzyQuery do
       expect(query.to_json).to eq hash_query.to_json
     end
   end
+
+  context 'with a fuzziness of 0.5 specified' do
+    let(:query) do
+      subject.new(query: :bar, field: :foo, fuzziness: 0.5)
+    end
+
+    before do
+      hash_query[:fuzzy][:foo][:fuzziness] = 0.5
+    end
+
+    it 'will set the fuzziness' do
+      expect(query.fuzziness).to eq 0.5
+    end
+
+    it 'will have the correct hash representation' do
+      expect(query.to_hash).to eq hash_query
+    end
+
+    it 'will have the correct json representation' do
+      expect(query.to_json).to eq hash_query.to_json
+    end
+  end
+
+  context 'with an invalid fuzziness specified' do
+    it 'will raise an error' do
+      expect {subject.new(query: :bar, field: :foo, fuzziness: {})}.to raise_error(Virtus::CoercionError)
+    end
+  end
+
+  context 'with max_expansions specified' do
+    context 'when given an int' do
+      before { hash_query[:fuzzy][:foo][:max_expansions] = 2 }
+      it 'will use the max_expansions' do
+        expect(subject.new(query: :bar, field: :foo, max_expansions: 2).to_hash).to eq hash_query
+      end
+    end
+    context 'with invalid input' do
+      it 'will raise an error' do
+        expect {subject.new(query: :bar, field: :foo, max_expansions: {})}.to raise_error(Virtus::CoercionError)
+      end
+    end
+  end
 end
