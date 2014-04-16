@@ -21,6 +21,7 @@ require 'daedal/attributes/query_value'
 require 'daedal/attributes/boost'
 
 # filters
+require 'daedal/filters/exists_filter'
 require 'daedal/filters/term_filter'
 require 'daedal/filters/terms_filter'
 require 'daedal/filters/range_filter'
