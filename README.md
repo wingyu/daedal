@@ -137,6 +137,7 @@ Currently, the following filters have been implemented:
 * [term filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-term-filter.html)
 * [terms filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-terms-filter.html)
 * [nested filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-nested-filter.html)
+* [exists filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-exists-filter.html)
 
 ### Type checking and attribute coercion
 
@@ -191,9 +192,9 @@ class PlayQuery < Daedal::Queries::Query
   # define the parameters that you want in your query
   # if the field is optional, make sure to set required to false
   attribute :author, String
+  attribute :title, String
 
   attribute :characters, Array[String], required: false
-  attribute :title, String, required: false
 
   def construct_query
     author_query = Daedal::Queries::MatchQuery.new(field: 'author', query: author)
