@@ -6,9 +6,16 @@ module Daedal
       # required attributes
       attribute :field,     Daedal::Attributes::Field
       attribute :terms,     Array[Daedal::Attributes::QueryValue]
+
+      # not required
+      attribute :execution, Daedal::Attributes::QueryValue, required: false
   
       def to_hash
-        {terms: {field => terms}}
+        result = {terms: {field => terms}}
+        unless execution.nil?
+          result[:terms][:execution] = execution
+        end
+        result
       end
     end
   end

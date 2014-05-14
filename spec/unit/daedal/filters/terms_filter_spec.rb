@@ -48,4 +48,16 @@ describe Daedal::Filters::TermsFilter do
       expect(filter.to_json).to eq hash_filter.to_json
     end
   end
+
+  context 'with an execution mode' do
+    let(:filter) do
+      subject.new(field: field, terms: terms, execution: :and)
+    end
+    let(:hash_filter) do
+      {terms: {field => terms, execution: :and}}
+    end
+    it 'will set the execution mode correctly' do
+      expect(filter.to_hash).to eq hash_filter
+    end
+  end
 end
