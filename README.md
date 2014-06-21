@@ -23,6 +23,9 @@ query DSL into Ruby objects, Daedal addresses the following issues:
 Daedal also makes it easy to define custom queries tailored to your specific use case - you can see
 a simple example at the end of the documentation.
 
+Daedal itself is designed more as a "low level" library, and doesn't necessarily make for terribly elegant code.
+If you'd prefer a more Ruby-friendly block DSL, you can take a look at a new project I've been working on, [DaedalSL](https://github.com/RallyPointNetworks/daedal-sl).
+
 Installation
 ------------
 
