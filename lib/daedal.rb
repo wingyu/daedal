@@ -43,5 +43,7 @@ require 'daedal/queries/nested_query'
 require 'daedal/queries/prefix_query'
 require 'daedal/queries/fuzzy_query'
 require 'daedal/queries/query_string_query'
+require 'daedal/queries/term_query'
+require 'daedal/queries/terms_query'
 
 # facets
