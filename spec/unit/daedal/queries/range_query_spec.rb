@@ -64,7 +64,7 @@ describe Daedal::Queries::RangeQuery do
       context 'with field, boost and one or more minimum attribute' do
         let(:params)     { { field: field, boost: boost }.merge(attr_hash) }
         let(:query)      { subject.new(params) }
-        let(:hash_query) { { range: { field => attr_hash } } }
+        let(:hash_query) { { range: { field => attr_hash.merge(boost: boost) } } }
         it "will not raise an error when only #{attrs.join(', ')} is specified" do
           expect { query }.to_not raise_error
         end

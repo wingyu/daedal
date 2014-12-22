@@ -23,10 +23,9 @@ module Daedal
 
       def to_hash
         inner_result = attributes.select { |k,v| MINIMUM_ATTRIBUTES.include?(k) && !v.nil? }
-        inner_result.merge(boost: boost) if boost
-        
-        {range: {field => inner_result} }
+        inner_result.merge!(boost: boost) if boost
 
+        {range: {field => inner_result} }
       end
     end
   end
