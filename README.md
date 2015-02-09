@@ -132,6 +132,7 @@ Currently, the following filters have been implemented:
 * [and filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-and-filter.html)
 * [bool filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-bool-filter.html)
 * [geo distance filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-geo-distance-filter.html)
+* [geo distance range filter](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/geo-distance.html#geo-distance-range)
 * [or filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-or-filter.html)
 * [range filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-range-filter.html)
 * [term filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-term-filter.html)
