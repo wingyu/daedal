@@ -19,9 +19,7 @@ require 'daedal/attributes/filter'
 require 'daedal/attributes/field'
 require 'daedal/attributes/query_value'
 require 'daedal/attributes/boost'
-require 'daedal/attributes/score_function'
 require 'daedal/attributes/score_function_array'
-
 
 # filters
 require 'daedal/filters/exists_filter'
