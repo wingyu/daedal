@@ -92,6 +92,7 @@ bool_query.to_json # => "{\"bool\":{\"should\":[{\"match\":{\"lines\":{\"query\"
 Currently, the following queries have been implemented:
 * [bool query](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html)
 * [constant score query](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-constant-score-query.html)
+* [function score query](http://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-function-score-query.html)
 * [dis max query](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-dis-max-query.html)
 * [filtered query](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-filtered-query.html)
 * [fuzzy query](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-fuzzy-query.html)
