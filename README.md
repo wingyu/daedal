@@ -140,6 +140,7 @@ Currently, the following filters have been implemented:
 * [terms filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-terms-filter.html)
 * [nested filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-nested-filter.html)
 * [exists filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-exists-filter.html)
+* [type filter](http://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-type-filter.html)
 
 ### Type checking and attribute coercion
 
