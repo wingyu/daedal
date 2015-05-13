@@ -20,6 +20,7 @@ require 'daedal/attributes/field'
 require 'daedal/attributes/query_value'
 require 'daedal/attributes/boost'
 require 'daedal/attributes/score_function_array'
+require 'daedal/attributes/type_value'
 
 # filters
 require 'daedal/filters/exists_filter'
@@ -32,6 +33,7 @@ require 'daedal/filters/and_filter'
 require 'daedal/filters/or_filter'
 require 'daedal/filters/bool_filter'
 require 'daedal/filters/nested_filter'
+require 'daedal/filters/type_filter'
 
 # queries
 require 'daedal/queries/match_all_query'
