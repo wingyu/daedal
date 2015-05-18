@@ -21,6 +21,7 @@ require 'daedal/attributes/query_value'
 require 'daedal/attributes/boost'
 require 'daedal/attributes/score_function_array'
 require 'daedal/attributes/type_value'
+require 'daedal/attributes/flag'
 
 # filters
 require 'daedal/filters/exists_filter'
@@ -51,5 +52,6 @@ require 'daedal/queries/term_query'
 require 'daedal/queries/terms_query'
 require 'daedal/queries/range_query'
 require 'daedal/queries/function_score_query'
+require 'daedal/queries/simple_query_string_query'
 
 # facets
