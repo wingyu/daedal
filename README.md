@@ -132,6 +132,7 @@ term_filter.to_json # => "{\"term\":{\"characters\":\"Pozzo\"}}"
 
 Currently, the following filters have been implemented:
 * [and filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-and-filter.html)
+* [not filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-not-filter.html)
 * [bool filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-bool-filter.html)
 * [geo distance filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-geo-distance-filter.html)
 * [geo distance range filter](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/geo-distance.html#geo-distance-range)
@@ -155,7 +156,7 @@ constant_score_query = {'constant_score' => {'boost' => 'foo', 'query' => {'matc
 
 would yield a server error, since the `boost` parameter must be a number.
 
-Daedal uses [Virtus](https://github.com/solnic/virtus) to perform data-type coercions. 
+Daedal uses [Virtus](https://github.com/solnic/virtus) to perform data-type coercions.
 Invalid query parameters are surfaced at runtime, making debugging much easier.
 The previous example in Daedal would raise an error:
 
@@ -192,7 +193,7 @@ Here are some guidelines:
 Example of a custom query:
 ``` ruby
 class PlayQuery < Daedal::Queries::Query
-  
+
   # define the parameters that you want in your query
   # if the field is optional, make sure to set required to false
   attribute :author, String
@@ -212,7 +213,7 @@ class PlayQuery < Daedal::Queries::Query
     full_query
   end
 
-  # define the to_hash method to convert for use in ElasticSearch 
+  # define the to_hash method to convert for use in ElasticSearch
   def to_hash
     construct_query.to_hash
   end
