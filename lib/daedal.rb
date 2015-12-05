@@ -54,5 +54,5 @@ require 'daedal/queries/terms_query'
 require 'daedal/queries/range_query'
 require 'daedal/queries/function_score_query'
 require 'daedal/queries/simple_query_string_query'
-
+require 'daedal/queries/regexp_query'
 # facets
