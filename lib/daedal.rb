@@ -36,6 +36,7 @@ require 'daedal/filters/or_filter'
 require 'daedal/filters/bool_filter'
 require 'daedal/filters/nested_filter'
 require 'daedal/filters/type_filter'
+require 'daedal/filters/regexp_filter'
 
 # queries
 require 'daedal/queries/match_all_query'

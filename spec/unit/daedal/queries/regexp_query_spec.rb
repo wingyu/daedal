@@ -75,5 +75,5 @@ describe Daedal::Queries::RegexpQuery do
       expect(query.to_hash).to eq hash_query
       expect(query.to_json).to eq hash_query.to_json
     end
-   end
+  end
 end
